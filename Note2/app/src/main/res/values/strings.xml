@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Note2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_notes">Search notes</string>
+    <string name="note_title">Note Title</string>
+    <string name="note_subtitle">Note subtitle</string>
+    <string name="note_content">Note content...</string>
+    <string name="miscellaneous_text">Miscellaneous</string>
+    <string name="pick_color_text">Pick color</string>
+    <string name="add_image_text">Add image</string>
+    <string name="add_link_text">Add link</string>
+    <string name="delete_this_note_text">Delete this note</string>
+    <string name="add_url_text">Add URL</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="add">ADD</string>
+    <string name="cancel">CANCEL</string>
+    <string name="delete_note_text">Delete note</string>
+    <string name="delete_text">DELETE</string>
+</resources>

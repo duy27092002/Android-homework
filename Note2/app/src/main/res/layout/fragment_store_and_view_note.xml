@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.StoreAndViewNoteFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:paddingTop="20dp">
+
+            <ImageView
+                android:id="@+id/backIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/app_name"
+                android:paddingStart="12dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/colorIcons"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/doneIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/background_save_button"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/ic_done"
+                app:layout_constraintBottom_toBottomOf="@id/backIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/backIcon"
+                app:tint="@color/colorIcons" />
+
+            <EditText
+                android:id="@+id/titleEdt"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:background="@null"
+                android:fontFamily="@font/ubuntu_bold"
+                android:hint="@string/note_title"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/backIcon" />
+
+            <TextView
+                android:id="@+id/dateTimeText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorIcons"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@id/titleEdt"
+                app:layout_constraintStart_toStartOf="@id/titleEdt"
+                app:layout_constraintTop_toBottomOf="@id/titleEdt" />
+
+            <View
+                android:id="@+id/subtitleIndicatorView"
+                android:layout_width="7dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/background_subtitle_indicator"
+                app:layout_constraintBottom_toBottomOf="@id/subtitleEdt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/subtitleEdt" />
+
+            <EditText
+                android:id="@+id/subtitleEdt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:background="@null"
+                android:fontFamily="@font/ubuntu_medium"
+                android:hint="@string/note_subtitle"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:textColor="@color/colorTextSubtitle"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/subtitleIndicatorView"
+                app:layout_constraintTop_toBottomOf="@id/dateTimeText" />
+
+            <ImageView
+                android:id="@+id/noteImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/subtitleEdt" />
+
+            <ImageView
+                android:id="@+id/deleteNoteImageIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/background_delete"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/noteImage"
+                app:layout_constraintTop_toTopOf="@id/noteImage"
+                app:tint="@color/colorWhite" />
+
+            <LinearLayout
+                android:id="@+id/webURLLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/noteImage">
+
+                <TextView
+                    android:id="@+id/linkText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoLink="web"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:includeFontPadding="false"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/deleteLinkIcon"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_delete"
+                    app:tint="@color/colorDelete" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/contentEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:background="@null"
+                android:fontFamily="@font/ubuntu_regular"
+                android:gravity="top"
+                android:hint="@string/note_content"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:minHeight="150dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/webURLLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <include layout="@layout/layout_miscellaneous" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

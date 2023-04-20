@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstFragment">
+
+    <include app:graph="@navigation/second_nav_graph" />
+
+    <action android:id="@+id/action_global_firstFragment"
+        app:destination="@id/firstFragment"/>
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="t3h.android.navgraph.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_secondActivity"
+            app:destination="@id/secondActivity" />
+        <action
+            android:id="@+id/action_firstFragment_to_sendMoneyGraph"
+            app:destination="@id/sendMoneyGraph" />
+        <action
+            android:id="@+id/action_firstFragment_to_second_nav_graph"
+            app:destination="@id/second_nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="t3h.android.navgraph.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_secondFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/myDialogFragment"
+        android:name="t3h.android.navgraph.MyDialogFragment"
+        android:label="fragment_my_dialog"
+        tools:layout="@layout/fragment_my_dialog" />
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="t3h.android.navgraph.SecondActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second" />
+    <navigation android:id="@+id/sendMoneyGraph"
+        app:startDestination="@id/chooseRecipient">
+        <fragment
+            android:id="@+id/chooseAmountFragment"
+            android:name="t3h.android.navgraph.ChooseAmountFragment"
+            android:label="fragment_choose_amount"
+            tools:layout="@layout/fragment_choose_amount" />
+        <fragment
+            android:id="@+id/chooseRecipient"
+            android:name="t3h.android.navgraph.ChooseRecipient"
+            android:label="fragment_choose_recipient"
+            tools:layout="@layout/fragment_choose_recipient">
+            <action
+                android:id="@+id/action_chooseRecipient_to_chooseAmountFragment"
+                app:destination="@id/chooseAmountFragment" />
+        </fragment>
+    </navigation>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="t3h.android.navgraph.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
+</navigation>

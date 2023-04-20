@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/noteListFragment">
+
+    <fragment
+        android:id="@+id/noteListFragment"
+        android:name="t3h.android.note2.ui.NoteListFragment"
+        android:label="fragment_note_list"
+        tools:layout="@layout/fragment_note_list" >
+        <action
+            android:id="@+id/action_noteListFragment_to_storeAndViewNoteFragment"
+            app:destination="@id/storeAndViewNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeAndViewNoteFragment"
+        android:name="t3h.android.note2.ui.StoreAndViewNoteFragment"
+        android:label="fragment_store_and_view_note"
+        tools:layout="@layout/fragment_store_and_view_note" />
+</navigation>

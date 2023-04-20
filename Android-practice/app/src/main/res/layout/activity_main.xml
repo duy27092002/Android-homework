@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:layout_weight="20">
+
+    <Button
+        android:id="@+id/button_toast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_200"
+        android:onClick="showToast"
+        android:text="@string/button_label_toast"
+        android:textColor="@android:color/black"
+        android:layout_weight="1"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="t3h.android.hellotoast.ValueFragment"
+        android:layout_weight="18"
+        />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="t3h.android.hellotoast.CountFragment"
+        android:layout_weight="1"/>
+
+</LinearLayout>
